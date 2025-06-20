@@ -1,0 +1,40 @@
+mode: 'perturbations'
+model:
+  potential: 'quadratic'
+  end_time: 10
+scales:
+  # length: # in Hubble(draw.time)^-1 units, if no length then L is chosen such that kmax_box = sigma H
+  sigma_R: 10000 ## big to not filter anything out 
+  sigma_dR: 10000
+  Mp: 100 # defining our units
+draw:
+  time: 5
+  rayleigh: True
+
+plot:
+  bg: True
+  potential: True
+  pdf: True
+  classicality: False
+  spectra: False
+
+write:
+  bg: True
+  spectra: True
+  sim:
+    software: "ISTORIZ"
+    input_file: "params_file2"
+    duration: 5
+    checkpoints: 0
+    small_chk_global: 500
+    small_chk_spec: 30
+    gauge: 'geodesic'
+    # dt_multiplier: 0.45
+    dt_multiplier: 0.25
+    puncture_mu: 0.0
+    damping: False
+    sigma: 1
+    sto_backreaction:  False
+    sto_seed: 
+    stoiic: 0
+
